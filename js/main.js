@@ -130,7 +130,7 @@ if (welcomeOverlay && openInvitationBtn) {
       
       const echadText = welcomeOverlay.querySelector('.welcome-echad');
       if (echadText) {
-        echadText.textContent = 'ECHAD';
+        echadText.textContent = 'S & S';
         echadText.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         echadText.style.opacity = '1';
         echadText.style.transform = 'scale(1)';
@@ -196,7 +196,7 @@ function createConfetti() {
   }
 }
 
-const targetDate = new Date('2026-10-26T16:00:00+05:30');
+const targetDate = new Date('2026-10-05T10:30:00+05:30');
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
@@ -349,3 +349,4 @@ document.querySelectorAll('.rsvp-form input, .rsvp-form textarea, .rsvp-form sel
   // Initial check in case of browser autofill on load
   setTimeout(checkFilled, 100);
 });
+
