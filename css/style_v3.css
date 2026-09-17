@@ -1,9 +1,9 @@
 :root {
-  --primary: #3c4a3e;
+  --primary: #611b24;
   --secondary: #d4af37;
   --cream: #faf9f6;
-  --ink: #2f2a25;
-  --muted: #5a6b5c;
+  --ink: #381e22;
+  --muted: #8a6a6f;
   --shadow: rgba(0, 0, 0, 0.16);
 }
 
@@ -1165,6 +1165,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .contact-section {
   padding-top: 2rem;
 }
+
 
 
 

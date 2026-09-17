@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       
       // Sage Green gradient background
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, '#a9b59a');
-      gradient.addColorStop(1, '#8e997f');
+      gradient.addColorStop(0, '#e3c8c9');
+      gradient.addColorStop(1, '#c9a5a7');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -151,4 +151,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
 
