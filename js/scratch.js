@@ -146,26 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
       timerWrapper.classList.add("visible");
     }
 
-    if (!window.hasShownScrollPopup) {
-      window.hasShownScrollPopup = true;
-      const scrollPopup = document.createElement("div");
-      scrollPopup.innerHTML = "<span>Swipe Up to Continue <i class='fa-solid fa-chevron-up' style='margin-left: 8px;'></i></span>";
-      scrollPopup.style.cssText = "position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%); background: rgba(128, 0, 32, 0.9); color: #fff; padding: 12px 24px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; z-index: 9999; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 20px rgba(0,0,0,0.2); pointer-events: none; white-space: nowrap;";
-      document.body.appendChild(scrollPopup);
-      
-      setTimeout(() => {
-        scrollPopup.style.bottom = "80px";
-        scrollPopup.style.opacity = "1";
-      }, 500);
-      
-      setTimeout(() => {
-        scrollPopup.style.bottom = "100px";
-        scrollPopup.style.opacity = "0";
-        setTimeout(() => scrollPopup.remove(), 500);
-      }, 3500);
-    }
   }
 });
+
 
 
 
