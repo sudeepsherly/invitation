@@ -59,11 +59,4 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') updateLightbox(currentIndex + 1);
 });
 
-
-  if (touchEndX > touchStartX + swipeThreshold) {
-    updateLightbox(currentIndex - 1);
-  }
-}
-
 if (lightboxImg) lightboxImg.style.transition = 'opacity 0.15s ease-in-out';
-
