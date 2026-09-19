@@ -108,7 +108,7 @@ if (scheduleCards.length && scheduleList) {
 if (welcomeOverlay && openInvitationBtn) {
   document.body.classList.add('welcome-visible');
   openInvitationBtn.addEventListener('click', () => {
-    setTimeout(() => { if (!window.hasShownScrollPopup) { window.hasShownScrollPopup = true; const scrollPopup = document.createElement('div'); scrollPopup.innerHTML = "<span>Swipe Up to Continue <i class='fa-solid fa-chevron-up' style='margin-left: 8px;'></i></span>"; scrollPopup.style.cssText = "position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%); background: rgba(128, 0, 32, 0.9); color: #fff; padding: 12px 24px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; z-index: 9999; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 20px rgba(0,0,0,0.2); pointer-events: none; white-space: nowrap;"; document.body.appendChild(scrollPopup); setTimeout(() => { scrollPopup.style.bottom = '80px'; scrollPopup.style.opacity = '1'; }, 100); setTimeout(() => { scrollPopup.style.bottom = '100px'; scrollPopup.style.opacity = '0'; setTimeout(() => scrollPopup.remove(), 500); }, 3500); } }, 2000);
+    setTimeout(() => { if (!window.hasShownScrollPopup) { window.hasShownScrollPopup = true; const scrollPopup = document.createElement('div'); scrollPopup.innerHTML = "<span>Swipe Up to Continue <i class='fa-solid fa-chevron-up' style='margin-left: 8px;'></i></span>"; scrollPopup.style.cssText = "position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%); background: rgba(128, 0, 32, 0.9); color: #fff; padding: 12px 24px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; z-index: 9999; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 20px rgba(0,0,0,0.2); pointer-events: none; white-space: nowrap;"; document.body.appendChild(scrollPopup); setTimeout(() => { scrollPopup.style.bottom = '80px'; scrollPopup.style.opacity = '1'; }, 100); setTimeout(() => { scrollPopup.style.bottom = '100px'; scrollPopup.style.opacity = '0'; setTimeout(() => scrollPopup.remove(), 500); }, 3500); } }, 4000);
     welcomeOverlay.classList.add('opening');
     const card = welcomeOverlay.querySelector('.welcome-card');
     if (card) { card.style.filter = 'none'; card.style.opacity = '1'; card.style.transform = 'scale(1)'; }
@@ -259,6 +259,7 @@ document.querySelectorAll('.rsvp-form input, .rsvp-form textarea, .rsvp-form sel
   // Initial check in case of browser autofill on load
   setTimeout(checkFilled, 100);
 });
+
 
 
 
