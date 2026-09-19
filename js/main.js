@@ -229,52 +229,7 @@ function updateCountdown() {
   if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
 }
 
-async function submitRsvpToPrivateStore(data) {
-  const url = String(rsvpSheetUrl || '').trim();
-
-  if (!url) {
-    throw new Error('RSVP endpoint is not configured.');
-  }
-
-  // Google Apps Script doPost(e) reads e.parameter, which requires
-  // application/x-www-form-urlencoded (NOT JSON).
-  const formBody = new URLSearchParams(data);
-
-  await fetch(url, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: formBody.toString(),
-  });
-}
-
-if (rsvpForm) {
-  rsvpForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(rsvpForm);
-    const submission = Object.fromEntries(formData.entries());
-    const name = String(submission.name || '').trim();
-
-    if (!name) {
-      if (rsvpMessage) {
-        rsvpMessage.textContent = 'Please enter your name before sending the RSVP.';
-        rsvpMessage.className = 'form-message error';
-      }
-      return;
-    }
-
-    try {
-      await submitRsvpToPrivateStore(submission);
-      rsvpForm.reset();
-
-      if (rsvpMessage) {
-        rsvpMessage.textContent = `Thank you, ${name}! Your RSVP has been received. We look forward to celebrating with you! 🎉`;
-        rsvpMessage.className = 'form-message success';
-      }
-    } catch (error) {
+ catch (error) {
       console.error('Unable to save RSVP:', error);
       if (rsvpMessage) {
         rsvpMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
@@ -289,44 +244,7 @@ const greetingForm = document.getElementById('greetingForm');
 const greetingMessage = document.getElementById('greetingMessage');
 
 if (greetingForm) {
-  greetingForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(greetingForm);
-    const submission = Object.fromEntries(formData.entries());
-    const name = String(submission.name || '').trim();
-
-    if (!name) {
-      if (greetingMessage) {
-        greetingMessage.textContent = 'Please enter your name.';
-        greetingMessage.className = 'form-message error';
-      }
-      return;
-    }
-
-    try {
-      const greetingUrl = greetingForm.dataset.sheetUrl || rsvpSheetUrl;
-      const formBody = new URLSearchParams(submission);
-      await fetch(greetingUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formBody.toString(),
-      });
-      greetingForm.reset();
-
-      if (greetingMessage) {
-        greetingMessage.textContent = `Thank you, ${name}! Your blessing has been received with love. 💖`;
-        greetingMessage.className = 'form-message success';
-      }
-    } catch (error) {
-      console.error('Unable to save greeting:', error);
-      if (greetingMessage) {
-        greetingMessage.textContent = 'Something went wrong. Please try again.';
-        greetingMessage.className = 'form-message error';
-      }
-    }
-  });
+  
 }
 
 updateCountdown();
@@ -349,4 +267,5 @@ document.querySelectorAll('.rsvp-form input, .rsvp-form textarea, .rsvp-form sel
   // Initial check in case of browser autofill on load
   setTimeout(checkFilled, 100);
 });
+
 
