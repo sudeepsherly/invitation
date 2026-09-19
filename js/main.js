@@ -229,16 +229,7 @@ function updateCountdown() {
   if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
 }
 
- catch (error) {
-      console.error('Unable to save RSVP:', error);
-      if (rsvpMessage) {
-        rsvpMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
-        rsvpMessage.className = 'form-message error';
-      }
-    }
 
-  });
-}
 
 const greetingForm = document.getElementById('greetingForm');
 const greetingMessage = document.getElementById('greetingMessage');
@@ -267,5 +258,6 @@ document.querySelectorAll('.rsvp-form input, .rsvp-form textarea, .rsvp-form sel
   // Initial check in case of browser autofill on load
   setTimeout(checkFilled, 100);
 });
+
 
 
