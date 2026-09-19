@@ -59,26 +59,11 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') updateLightbox(currentIndex + 1);
 });
 
-let touchStartX = 0;
-let touchEndX = 0;
 
-lightbox?.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-lightbox?.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  if (touchEndX < touchStartX - swipeThreshold) {
-    updateLightbox(currentIndex + 1);
-  }
   if (touchEndX > touchStartX + swipeThreshold) {
     updateLightbox(currentIndex - 1);
   }
 }
 
 if (lightboxImg) lightboxImg.style.transition = 'opacity 0.15s ease-in-out';
+
