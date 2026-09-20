@@ -48,7 +48,7 @@
           <a href="#events">Events</a>
           <a href="#reception">Reception</a>
           <a href="#gallery">Gallery</a>
-          <a href="#rsvp">RSVP</a>
+          
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -206,51 +206,9 @@
         </div>
       </section>
 
-      <section class="section rsvp-section" id="rsvp">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="section-label">Will You Be Joining Us?</p>
-            <h2>RSVP</h2>
-          </div>
-          <form id="rsvpForm" class="rsvp-form reveal"  novalidate>
-            <input type="hidden" name="formType" value="rsvp" />
-            <div class="rsvp-form-grid">
-              <input type="text" name="name" placeholder="Full Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <input type="tel" name="phone" placeholder="Phone" />
-              <select name="attendance" required>
-                <option value="" disabled selected hidden>Will you be joining us?</option>
-                <option value="Attending the Holy Matrimony - Hyderabad">Attending the Holy Matrimony - Hyderabad</option>
-                <option value="Attending the Reception - Gudiwada">Attending the Reception - Gudiwada</option>
-                <option value="Attending Both">Attending Both</option>
-                <option value="Regretfully, I cannot">Regretfully, I cannot</option>
-              </select>
-              <input type="number" name="guests" placeholder="Number of Guests" min="1" max="20" />
-            </div>
-            <button type="submit" class="btn btn-primary">Send RSVP</button>
-          </form>
-          <p id="rsvpMessage" class="form-message" role="status" aria-live="polite"></p>
-          
-        </div>
-      </section>
+      
 
-      <section class="section guestbook-section" id="guestbook" style="background: var(--bg-alt);">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="section-label">Blessings &amp; Greetings</p>
-            <h2>Leave a blessing for Sherly &amp; Sudeep</h2>
-          </div>
-          <form id="greetingForm" class="rsvp-form reveal"  novalidate>
-            <input type="hidden" name="formType" value="blessing" />
-            <div class="rsvp-form-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
-              <input type="text" name="name" placeholder="Your Name" required style="width: 100%; max-width: 400px; margin: 0 auto; display: block;" />
-              <textarea name="message" rows="4" placeholder="Your Blessing" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">Leave a Blessing</button>
-          </form>
-          <p id="greetingMessage" class="form-message" role="status" aria-live="polite"></p>
-        </div>
-      </section>
+      
 
       <section class="section contact-section" id="contact">
         <div class="container">
@@ -304,6 +262,7 @@
     <script src="js/audio-player.js?v=20260817-2"></script>
 </body>
 </html>
+
 
 
 
